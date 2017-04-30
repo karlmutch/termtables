@@ -161,6 +161,12 @@ func (t *Table) AddRow(items ...interface{}) *Row {
 	return row
 }
 
+// InsertRow inserts a fully constructed row into the table.
+func (t *Table) InsertRow(row *Row) *Table {
+	t.elements = append(t.elements, row)
+	return t
+}
+
 // AddTitle supplies a table title, which if present will be rendered as
 // one cell across the width of the table, as the first row.
 func (t *Table) AddTitle(title interface{}) {
