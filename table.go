@@ -148,6 +148,12 @@ func CreateTable() *Table {
 	return t
 }
 
+// Isempty checks if there are any rows inside the table yet
+//
+func (t *Table) IsEmpty() bool {
+	return len(t.elements) == 0
+}
+
 // AddSeparator adds a line to the table content, where the line
 // consists of separator characters.
 func (t *Table) AddSeparator() {
